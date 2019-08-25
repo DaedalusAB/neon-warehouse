@@ -1,0 +1,20 @@
+@import "../../../mixins.scss";
+
+.product-content {
+  width: 300px;
+  background-color: $background-color-secondary;
+  border: 1px solid $color-secondary;
+  color: $color-secondary;
+  border-radius: 5px;
+  margin: $padding 0 $padding 0;
+  padding: $padding;
+
+  .product-label {
+    font-weight: bold;
+  }
+
+  &:hover {
+    cursor: pointer;
+    border-right: 5px solid $color-teritary;
+  }
+}

@@ -1,0 +1,75 @@
+@import "../../../mixins.scss";
+
+.modal-content {
+  background-color: $background-color-secondary;
+  color: $color-teritary;
+  border: 1px solid $color-teritary;
+  padding: $strong-padding;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .data-row {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: $strong-padding;
+
+      .label {
+        flex: 1 1 30%;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      .data {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 70%;
+        position: relative;
+
+        .error {
+          position: absolute;
+          top: 28px;
+          left: 0;
+          color: $danger;
+        }
+      }
+    }
+  }
+
+  .controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: $padding;
+
+    button {
+      min-width: 120px;
+    }
+
+  }
+}
+
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  z-index: 2;
+  transform: translateX(-50%);
+  width: 500px;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $overlay-color;
+  z-index: 1;
+}

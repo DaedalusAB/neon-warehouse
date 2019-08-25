@@ -1,0 +1,20 @@
+<div class="navigation">
+  <div class="nav-item">
+    <label>Filters:</label>
+  </div>
+  <div class="search nav-item">
+    <input type="search" (input)="filterById()" [(ngModel)]="idFilter" placeholder="Filter product ID">
+  </div>
+  <div class="list nav-item">
+    <label>Floors:</label>
+    <span *ngFor="let floor of floors" class="item"
+    [ngClass]="{'active': floor === selectedFloor}"
+    (click)="setFloorFilter(floor)">Floor {{floor}}</span>
+  </div>
+  <div class="list nav-item">
+    <label>Sections:</label>
+    <span *ngFor="let section of sections" class="item"
+    [ngClass]="{'active': section === selectedSection}"
+    (click)="setSectionFilter(section)">Section {{section}}</span>
+  </div>
+</div>

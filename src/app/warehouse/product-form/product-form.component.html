@@ -1,0 +1,81 @@
+<div *ngIf="isShown">
+  <div class="modal" *ngIf="isShown" [@slideInOut]>
+    <div class="modal-content">
+      <form [formGroup]="productForm" class="content">
+        <div class="data-row">
+          <span class="label">ID: </span>
+          <div class="data">
+            <input class="data" formControlName="id" [ngClass]="{'invalid-input': showErrorForControl('id')}">
+            <ng-container *ngIf="showErrorForControl('id') || idTaken">
+              <span class="error" *ngIf="productForm.controls['id'].hasError('pattern')">
+                Id pattern is invalid
+              </span>
+              <span class="error" *ngIf="productForm.controls['id'].hasError('required')">
+                Id is required
+              </span>
+              <span class="error" *ngIf="idTaken">
+                Id is already taken
+              </span>
+            </ng-container>
+          </div>
+        </div>
+        <div class="data-row">
+          <span class="label">Quantity: </span>
+          <div class="data">
+            <input class="data" formControlName="quantity"
+              [ngClass]="{'invalid-input': showErrorForControl('quantity')}">
+            <ng-container *ngIf="showErrorForControl('quantity')">
+              <span class="error" *ngIf="productForm.controls['quantity'].hasError('pattern')">
+                Quantity must be a number
+              </span>
+              <span class="error" *ngIf="productForm.controls['quantity'].hasError('required')">
+                Quantity is required
+              </span>
+            </ng-container>
+          </div>
+        </div>
+        <div class="data-row">
+          <span class="label">Floor: </span>
+          <div class="data">
+            <select class="data" formControlName="floor" [ngClass]="{'invalid-input': showErrorForControl('floor')}">
+              <option *ngFor="let floor of floors" [value]="floor">
+                Floor {{floor}}
+              </option>
+            </select>
+            <ng-container *ngIf="showErrorForControl('floor')">
+              <span class="error">
+                Floor is required
+              </span>
+            </ng-container>
+          </div>
+        </div>
+        <div class="data-row">
+          <span class="label">Section: </span>
+          <div class="data">
+            <select class="data" formControlName="section"
+              [ngClass]="{'invalid-input': showErrorForControl('section')}">
+              <option *ngFor="let section of sections" [value]="section">
+                Section {{section}}
+              </option>
+            </select>
+            <ng-container *ngIf="showErrorForControl('section')">
+              <span class="error">
+                Section is required
+              </span>
+            </ng-container>
+            <ng-container *ngIf="locationTaken">
+              <span class="error">
+                That location is taken
+              </span>
+            </ng-container>
+          </div>
+        </div>
+      </form>
+      <div class="controls">
+        <button (click)="close()" class="btn-secondary">Cancel</button>
+        <button (click)="save()" class="btn-secondary">Save</button>
+      </div>
+    </div>
+  </div>
+  <div class="overlay"></div>
+</div>

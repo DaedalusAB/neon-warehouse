@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import "mixins.scss";
+@import "style/toastr-overrides.scss";
+@import "style/overrides.scss";
+
+html {
+  font-family: "Galano Grotesque W00", Arial, sans-serif;
+  line-height: 1.44;
+  color: $color-primary;
+}
+
+body {
+  background: $background-gradient;
+}

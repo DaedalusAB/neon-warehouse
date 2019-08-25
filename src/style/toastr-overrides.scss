@@ -1,0 +1,12 @@
+@import "../mixins.scss";
+
+.toast-container .ngx-toastr {
+  color: $color-secondary;
+  box-shadow: 0 0 12px $color-primary;
+}
+
+.toast-info {
+  color: $color-secondary;
+  background-color: $color-primary;
+  border: $border-width solid $color-secondary;
+}

@@ -1,0 +1,19 @@
+$padding: 10px;
+$light-padding: 3px;
+$strong-padding: 30px;
+$border-width: 1px;
+
+$background-gradient: linear-gradient(to right, #ff001e 0%, #ff3282 100%);
+
+$color-primary: #fff;
+$background-color-primary: #ff001e;
+
+$color-secondary: $background-color-primary;
+$background-color-secondary: $color-primary;
+
+$color-teritary: #000;
+$color-disabled: #e6e6e6;
+$background-color-teritary: #e6e6e6;
+
+$overlay-color: rgba($background-color-teritary, 0.9);
+$danger: #ff001e;

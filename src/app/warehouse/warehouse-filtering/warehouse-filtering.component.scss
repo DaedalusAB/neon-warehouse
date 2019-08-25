@@ -1,0 +1,53 @@
+@import "../../../mixins.scss";
+
+.navigation {
+  flex: 0 1 300px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: $padding;
+
+  .nav-item {
+    margin: $padding 0 $padding 0;
+
+    label {
+      font-weight: bold;
+    }
+  }
+
+  .search {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      line-height: 1.44;
+      font-size: large;
+      border-bottom: $border-width solid $color-primary;
+      color: $color-primary;
+
+      &::placeholder {
+        color: $color-primary;
+      }
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+
+    .item {
+      margin-left: $padding;
+      padding: $light-padding;
+
+      &:hover {
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      &.active {
+        color: $color-secondary;
+        background-color: $background-color-secondary;
+      }
+    }
+  }
+}

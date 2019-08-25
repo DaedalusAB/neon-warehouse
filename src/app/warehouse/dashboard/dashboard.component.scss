@@ -1,0 +1,23 @@
+@import "../../../mixins.scss";
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin: auto;
+
+  .dashboard-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: larger;
+    font-weight: bolder;
+    border-bottom: $border-width solid $color-primary;
+    margin-bottom: $strong-padding;
+  }
+
+  .dashboard-content {
+    display: flex;
+    flex-direction: row;
+  }
+}

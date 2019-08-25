@@ -1,0 +1,64 @@
+@import "../mixins.scss";
+
+input,
+select {
+  border: none;
+  background: none;
+  border-bottom: $border-width solid $color-teritary;
+  color: $color-teritary;
+  line-height: 1.44;
+  font-size: large;
+
+  &.invalid-input {
+    color: $danger;
+    border-color: $danger;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    color: $color-disabled;
+    border-color: $color-disabled;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $color-primary;
+  }
+
+  &:-ms-input-placeholder {
+    color: $color-primary;
+  }
+
+  &::placeholder {
+    color: $color-teritary;
+  }
+}
+
+button {
+  background: none;
+  background-color: $background-color-secondary;
+  color: $color-secondary;
+  border: 1px solid $color-secondary;
+  border-radius: 15px;
+  padding: $padding;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+    font-weight: bold;
+
+    transition: font-weight 1s ease-in;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &.btn-secondary {
+    color: $color-primary;
+    border-color: $color-secondary;
+    background-color: $color-secondary;
+  }
+}
